@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         withoutLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                flag=false;
                 openMainPage();
             }
         });
