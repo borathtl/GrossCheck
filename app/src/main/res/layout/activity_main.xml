@@ -10,30 +10,30 @@
         android:id="@+id/login"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="200dp"
         android:text="LOGIN"
         android:textAllCaps="false"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/withoutLogin"
+        app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.659" />
 
     <Button
         android:id="@+id/withoutLogin"
         android:layout_width="250dp"
         android:layout_height="50dp"
 
-        android:layout_marginBottom="320dp"
         android:text="CONTINUE WITHOUT LOGIN"
         android:textAllCaps="false"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button"
+        app:layout_constraintVertical_bias="0.464" />
 
     <TextView
         android:id="@+id/textView"
@@ -47,5 +47,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.651" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="189dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.546" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
