@@ -4,16 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SplashScreen">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="271dp"
-        android:layout_height="265dp"
+    <Button
+        android:id="@+id/login"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:text="LOGIN"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/withoutLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428" />
+
+    <Button
+        android:id="@+id/withoutLogin"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+
+        android:layout_marginBottom="320dp"
+        android:text="CONTINUE WITHOUT LOGIN"
+        android:textAllCaps="false"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to GrossCheck"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/grosscheck_200x200" />
+        app:layout_constraintVertical_bias="0.651" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

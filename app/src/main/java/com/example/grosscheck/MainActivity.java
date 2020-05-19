@@ -2,28 +2,45 @@ package com.example.grosscheck;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.View;
 import android.widget.Button;
-
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button loginButton;
+    private Button withoutLogin;
+    private boolean flag= false;
 
-    private static int SPLASH_TIME_OUT = 4000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new Handler().postDelayed(new Runnable() {
+        loginButton = (Button) findViewById(R.id.login);
+        withoutLogin = (Button) findViewById(R.id.withoutLogin);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                Intent homeIntent = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(homeIntent);
-                finish();
+            public void onClick(View v) {
+            flag=true;
+            openMainPage();
             }
-        },SPLASH_TIME_OUT);
+        });
+
+        withoutLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainPage();
+            }
+        });
+    }
+
+   public void openMainPage()
+    {
+        Intent intent = new Intent(this, MainPage.class);
+        intent.putExtra("LoginStatus", this.flag);
+        startActivity(intent);
     }
 }
