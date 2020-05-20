@@ -23,13 +23,7 @@ public class SutkahvaltiFragment extends Fragment {
         sutkahvaltiViewModel =
                 ViewModelProviders.of(this).get(SutkahvaltiViewModel.class);
         View root = inflater.inflate(R.layout.fragment_sutkahvalti, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        sutkahvaltiViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }
