@@ -1,4 +1,4 @@
-package com.example.grosscheck.ui.gallery;
+package com.example.grosscheck.ui.meyvesebze;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.grosscheck.R;
 
-public class GalleryFragment extends Fragment {
+public class MeyvesebzeFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private MeyvesebzeViewModel galleryViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+                ViewModelProviders.of(this).get(MeyvesebzeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_meyvesebze, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

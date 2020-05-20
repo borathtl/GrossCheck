@@ -1,16 +1,16 @@
-package com.example.grosscheck.ui.gallery;
+package com.example.grosscheck.ui.sutkahvalti;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class SutkahvaltiViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public SutkahvaltiViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is sutkahvalti fragment");
     }
 
     public LiveData<String> getText() {

@@ -31,13 +31,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.grosscheck.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="com.example.grosscheck.ui.meyvesebze.MeyvesebzeFragment"
+        android:label="@string/menu_meyvesebze"
+        tools:layout="@layout/fragment_meyvesebze" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.grosscheck.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:name="com.example.grosscheck.ui.sutkahvalti.SutkahvaltiFragment"
+        android:label="@string/menu_sutkahvali"
+        tools:layout="@layout/fragment_sutkahvalti" />
 </navigation>
