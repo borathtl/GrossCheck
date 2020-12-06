@@ -1,5 +1,6 @@
 package com.example.grosscheck;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (v.getId()) {
                     case R.id.sign_in_button:
                         signIn();
+                        break;
+                    // ...
+                    // ...
+                    case R.id.logout_button:
+                        signOut();
                         break;
                     // ...
                 }
@@ -70,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
                 openMainPage();
             }
         });
+
+
     }
 
    public void openMainPage()
@@ -120,5 +129,14 @@ public class MainActivity extends AppCompatActivity {
             Log.w("error", "signInResult:failed code=" + e.getStatusCode());
 
         }
+    }
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                    }
+                });
     }
 }
