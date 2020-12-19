@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".SplashScreen">
 
+    <com.wonderkiln.camerakit.CameraView
+        android:id="@+id/cameraview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.wonderkiln.camerakit.CameraView>
+
+        <Button
+            android:id="@+id/btn_detect"
+            android:text="DETECT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
+
     <Button
 
         android:id="@+id/login"
@@ -23,6 +37,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.659" />
 
+    <me.dm7.barcodescanner.zbar.ZBarScannerView
+        android:id="@+id/zbar_scannerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         />
 
     <Button
         android:id="@+id/withoutLogin"

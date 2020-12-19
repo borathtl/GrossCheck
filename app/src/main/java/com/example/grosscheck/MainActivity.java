@@ -3,6 +3,8 @@ package com.example.grosscheck;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,8 +19,31 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.ml.vision.common.FirebaseVisionImage;
+import com.wonderkiln.camerakit.CameraView;
 
-public class MainActivity extends AppCompatActivity {
+import dmax.dialog.SpotsDialog;
+import me.dm7.barcodescanner.zbar.Result;
+import me.dm7.barcodescanner.zbar.ZBarScannerView;
+
+public class MainActivity extends AppCompatActivity implements ZBarScannerView.ResultHandler {
+
+    CameraView cameraView;
+    Button btnDetect;
+    AlertDialog waitingDialog;
+    @Override
+    protected void onResume(){
+        super.onResume();
+        cameraView.start();
+
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        cameraView.stop();
+    }
+
 
     private Button loginButton;
     private Button withoutLogin;
@@ -27,11 +52,41 @@ public class MainActivity extends AppCompatActivity {
     int RC_SIGN_IN = 0;
     GoogleSignInClient mGoogleSignInClient;
 
+    private ZBarScannerView
+
+        zbar_scannerView;
+
+
+
+    private void startZBar()
+
+    {
+        zbar_scannerView.setResultHandler(this);
+        zbar_scannerView.startCamera();
+    }
+
+    private void stopZBar()
+    {
+        zbar_scannerView.stopCamera();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+
+        zbar_scannerView = (ZBarScannerView)findViewById((R.id.zbar_scannerView));
+        startZBar();
+        cameraView = (CameraView)findViewById(R.id.cameraview) ;
+        btnDetect=(Button)findViewById(R.id.btn_detect);
+        waitingDialog= new SpotsDialog.Builder()
+                .setContext(this)
+                .setMessage("Please wait")
+                .setCancelable(false)
+                .build();
+
+
         loginButton = (Button) findViewById(R.id.login);
         withoutLogin = (Button) findViewById(R.id.withoutLogin);
         signin = findViewById(R.id.sign_in_button);
@@ -138,5 +193,12 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    @Override
+    public void handleResult(Result rawResult) {
+
+
+
     }
 }
