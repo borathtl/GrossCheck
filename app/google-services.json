@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "663671818537",
+    "firebase_url": "https://grosscheck-1589723624790.firebaseio.com",
+    "project_id": "grosscheck-1589723624790",
+    "storage_bucket": "grosscheck-1589723624790.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663671818537:android:21985d004130081384cf38",
+        "android_client_info": {
+          "package_name": "com.example.grosscheck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663671818537-9nqiru6h5qaju7opnfqjapkt0gfgj498.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grosscheck",
+            "certificate_hash": "cf0cfb6b9a131420fc4235c8a825fd519ad8f84e"
+          }
+        },
+        {
+          "client_id": "663671818537-9drkgsrtgci80n1u43nmq86aukmt47g2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_E5bmLYSSAslzqjW0SQsHW1gF0ZYHIrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663671818537-9drkgsrtgci80n1u43nmq86aukmt47g2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

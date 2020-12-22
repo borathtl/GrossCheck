@@ -1,20 +1,18 @@
 package com.example.grosscheck;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.content.Intent;
-import android.util.Log;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -24,12 +22,10 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.ml.vision.common.FirebaseVisionImage;
-//import com.wonderkiln.camerakit.CameraView;
 
 import dmax.dialog.SpotsDialog;
-import me.dm7.barcodescanner.zbar.Result;
-import me.dm7.barcodescanner.zbar.ZBarScannerView;
+
+//import com.wonderkiln.camerakit.CameraView;
 
 //barcode
 public class MainActivity extends AppCompatActivity  {
@@ -57,6 +53,13 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
 
+            String[] requests = new String[]{
+                    Manifest.permission.ACCESS_FINE_LOCATION
+            };
+            if (ActivityCompat.checkSelfPermission(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, requests, 100);
+            }
 
        // cameraView = (CameraView)findViewById(R.id.cameraview) ;
         btnDetect=(Button)findViewById(R.id.btn_detect);

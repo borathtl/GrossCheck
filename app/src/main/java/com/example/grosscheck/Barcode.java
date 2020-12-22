@@ -1,17 +1,22 @@
 package com.example.grosscheck;
+
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import dmax.dialog.SpotsDialog;
+
+import java.util.ArrayList;
+
 import me.dm7.barcodescanner.zbar.Result;
-import me.dm7.barcodescanner.zbar.ZBarScannerView;
 import me.dm7.barcodescanner.zbar.ZBarScannerView;
 
 public class Barcode extends AppCompatActivity implements ZBarScannerView.ResultHandler {
+    private ArrayList<Product> mProductList = new ArrayList<>();
+
     @Override
     protected void onResume(){
         super.onResume();
@@ -79,11 +84,23 @@ public class Barcode extends AppCompatActivity implements ZBarScannerView.Result
 
     @Override
     public void handleResult(Result rawResult ) {
+        mProductList.add(
+                new Product("Ahududu Paket","20","https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/27400019/27400019-8bcf2d.jpg","8690565017555")
+        );
+        mProductList.add(
+                new Product("Erikli su 500ml","5","https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/08062201/08062201-3aa86b-1650x1650.jpg","86811212069805")
+        );
 
-        rawResult.getContents();
-        Toast.makeText(this, rawResult.getContents(), Toast.LENGTH_LONG).show();
 
+        for (Product product : mProductList) {
+            if(product.getBarcode().equals(rawResult.getContents())){
+                Toast.makeText(this, rawResult.getContents(), Toast.LENGTH_LONG).show();
 
+            }
+            else
+                Toast.makeText(this,"Product Not Found", Toast.LENGTH_LONG).show();
+        }
 
+      //  stopZBar();
     }
 }

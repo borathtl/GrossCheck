@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="api_key" translatable="false">AIzaSyBQtOhiWdJeu5quPtlVwXWmDJKLsSqWz-w</string>
+    <string name="api_key_places" translatable="false">AIzaSyBe6w-_aNTPPLefxE2uZtTsLDm8NQryup8</string>
+    <string name="api_key_distance" translatable="false">AIzaSyAx_UbHw_67cW4AX09PC72dc224kJAt2XU</string>
+    <string name="api_key_places_2" translatable="false">AIzaSyC_E5bmLYSSAslzqjW0SQsHW1gF0ZYHIrQ</string>
+</resources>
