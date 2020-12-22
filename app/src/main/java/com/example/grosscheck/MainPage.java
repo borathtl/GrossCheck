@@ -3,9 +3,12 @@ package com.example.grosscheck;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -40,6 +43,9 @@ public class MainPage extends AppCompatActivity {
             String personId = acct.getId();
             Uri personPhoto = acct.getPhotoUrl();
         }
+
+
+
 
         welcomeText= findViewById(R.id.welcome);
         Intent recieveIntent = getIntent();
@@ -79,10 +85,39 @@ public class MainPage extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_page, menu);
+       menu.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+
+            @Override
+            public boolean onMenuItemClick(MenuItem v) {
+                Intent intent = new Intent(MainPage.this, Barcode.class);
+                startActivity(intent);
+                Toast.makeText(MainPage.this, "index 0", Toast.LENGTH_LONG).show();
+                return true;
+            }
+        });
+        menu.getItem(1).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem v) {
+                Toast.makeText(MainPage.this, "index 1", Toast.LENGTH_LONG).show();
+                return true;
+            }
+        });
+      /*  button_barcode = findViewById(R.id.button_barcode);
+         button_barcode.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainPage.this, Barcode.class);
+                startActivity(intent);
+                return false;
+            }
+        }); */
+
         return true;
     }
+
 
     @Override
     public boolean onSupportNavigateUp() {

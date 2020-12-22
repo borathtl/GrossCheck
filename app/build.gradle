@@ -41,7 +41,7 @@ dependencies {
 
     implementation "me.dm7.barcodescanner:zbar:1.9.13"
 
-    implementation 'com.wonderkiln:camerakit:0.13.1'
+    // implementation 'com.wonderkiln:camerakit:0.13.1'
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-ml-vision:17.0.0'
     implementation 'com.github.d-max:spots-dialog:1.1@aar'

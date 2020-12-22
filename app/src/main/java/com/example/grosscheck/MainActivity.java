@@ -2,14 +2,19 @@ package com.example.grosscheck;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -20,29 +25,21 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
-import com.wonderkiln.camerakit.CameraView;
+//import com.wonderkiln.camerakit.CameraView;
 
 import dmax.dialog.SpotsDialog;
 import me.dm7.barcodescanner.zbar.Result;
 import me.dm7.barcodescanner.zbar.ZBarScannerView;
 
-public class MainActivity extends AppCompatActivity implements ZBarScannerView.ResultHandler {
+//barcode
+public class MainActivity extends AppCompatActivity  {
 
-    CameraView cameraView;
+    //CameraView cameraView;
     Button btnDetect;
     AlertDialog waitingDialog;
-    @Override
-    protected void onResume(){
-        super.onResume();
-        cameraView.start();
 
-    }
 
-    @Override
-    protected void onPause(){
-        super.onPause();
-        cameraView.stop();
-    }
+
 
 
     private Button loginButton;
@@ -52,23 +49,7 @@ public class MainActivity extends AppCompatActivity implements ZBarScannerView.R
     int RC_SIGN_IN = 0;
     GoogleSignInClient mGoogleSignInClient;
 
-    private ZBarScannerView
 
-        zbar_scannerView;
-
-
-
-    private void startZBar()
-
-    {
-        zbar_scannerView.setResultHandler(this);
-        zbar_scannerView.startCamera();
-    }
-
-    private void stopZBar()
-    {
-        zbar_scannerView.stopCamera();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,9 +57,8 @@ public class MainActivity extends AppCompatActivity implements ZBarScannerView.R
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
 
-        zbar_scannerView = (ZBarScannerView)findViewById((R.id.zbar_scannerView));
-        startZBar();
-        cameraView = (CameraView)findViewById(R.id.cameraview) ;
+
+       // cameraView = (CameraView)findViewById(R.id.cameraview) ;
         btnDetect=(Button)findViewById(R.id.btn_detect);
         waitingDialog= new SpotsDialog.Builder()
                 .setContext(this)
@@ -195,10 +175,5 @@ public class MainActivity extends AppCompatActivity implements ZBarScannerView.R
                 });
     }
 
-    @Override
-    public void handleResult(Result rawResult) {
-
-
-
-    }
 }
+
