@@ -14,13 +14,23 @@ public class Product {
     @SerializedName("productImage")
     @Nullable
     private String productImage;
+    @SerializedName("barcode")
+    private String barcode;
 
-    public Product(@Nullable String productName, @Nullable String productPrice, @Nullable String productImage) {
+    public Product(@Nullable String productName, @Nullable String productPrice, @Nullable String productImage,@Nullable String barcode) {
         this.productName = productName;
         this.productPrice = productPrice;
         this.productImage = productImage;
+        this.barcode = barcode;
     }
 
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
     @Nullable
     public String getProductName() {
         return productName;

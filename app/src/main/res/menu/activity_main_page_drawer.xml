@@ -8,11 +8,8 @@
             android:id="@+id/nav_home"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:title="@string/menu_meyvesebze" />
-        <item
             android:id="@+id/nav_slideshow"
-            android:title="@string/menu_sutkahvali" />
+            android:title="Ürünler" />
         <item
             android:id="@+id/logOut"
             android:title="Log Out"

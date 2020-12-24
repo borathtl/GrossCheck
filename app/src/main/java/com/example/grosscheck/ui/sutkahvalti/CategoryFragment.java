@@ -1,15 +1,10 @@
-package com.example.grosscheck;
+package com.example.grosscheck.ui.sutkahvalti;
 
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,13 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.grosscheck.MainPage;
+import com.example.grosscheck.Category;
+import com.example.grosscheck.CategoryAdapter;
+import com.example.grosscheck.Product;
+import com.example.grosscheck.ProductAdapter;
 import com.example.grosscheck.R;
-import com.example.grosscheck.data.Category;
-import com.example.grosscheck.data.CategoryAdapter;
-import com.example.grosscheck.data.Product;
-import com.example.grosscheck.data.ProductAdapter;
-import com.example.grosscheck.data.SubCategoryAdapter;
+import com.example.grosscheck.SubCategoryAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -195,7 +189,7 @@ public class CategoryFragment extends Fragment {
                                 String productName = productJson.getString("productName");
                                 String productPrice = productJson.getString("productPrice");
                                 String productImage = productJson.getString("productImage");
-                                Product product = new Product(productName, productPrice, productImage);
+                                Product product = new Product(productName, productPrice, productImage,"");
                                 tempProdList.add(product);
                             }
                             tempSubCat.setProductList(tempProdList);
