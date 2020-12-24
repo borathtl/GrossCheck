@@ -3,9 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item
-        android:id="@+id/nav_gallery"
-        android:title="@string/menu_meyvesebze" />
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
@@ -16,5 +13,9 @@
         <item
             android:id="@+id/nav_slideshow"
             android:title="@string/menu_sutkahvali" />
+        <item
+            android:id="@+id/logOut"
+            android:title="Log Out"
+            />
     </group>
 </menu>
