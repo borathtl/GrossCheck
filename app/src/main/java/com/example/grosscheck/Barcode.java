@@ -47,6 +47,7 @@ public class Barcode extends AppCompatActivity implements ZBarScannerView.Result
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcode);
         //barcode
+        addProdcuts();
         zbar_scannerView = (ZBarScannerView)findViewById((R.id.zbar_scannerView));
         startZBar();
         //barcode
@@ -80,27 +81,35 @@ public class Barcode extends AppCompatActivity implements ZBarScannerView.Result
         zbar_scannerView.stopCamera();
     }
 
+private void addProdcuts (){
 
+    mProductList.add(
+            new Product("Ahududu Paket","20 TL","https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/27400019/27400019-8bcf2d.jpg","8690565017555")
+    );
+    mProductList.add(
+            new Product("Erikli su 500ml","1.5 TL","https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/08062201/08062201-3aa86b-1650x1650.jpg","86811212069805")
+    );
+    mProductList.add(
+            new Product("Kardelen su 500ml","0,75 TL","https://lh3.googleusercontent.com/proxy/l8KoZXWM6mrdwaCNYnqDC2UXEK0CchBGYybH07EC3KJ18GhGgQ1lYpiFOU0haP2gjZ8nlyHHxZw8w2JamrqCbJGJHEhCnimg2j-G87qT3Hgz","8695188000052")
+    );
+
+
+}
 
     @Override
     public void handleResult(Result rawResult ) {
-        mProductList.add(
-                new Product("Ahududu Paket","20","https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/27400019/27400019-8bcf2d.jpg","8690565017555")
-        );
-        mProductList.add(
-                new Product("Erikli su 500ml","5","https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/08062201/08062201-3aa86b-1650x1650.jpg","86811212069805")
-        );
 
+       String result = rawResult.getContents().trim();
 
         for (Product product : mProductList) {
-            if(product.getBarcode().equals(rawResult.getContents())){
-                Toast.makeText(this, rawResult.getContents(), Toast.LENGTH_LONG).show();
 
+            if(product.getBarcode().equals(result)){
+                Toast.makeText(this, product.getProductName()+product.getProductPrice(), Toast.LENGTH_LONG).show();
+               // Toast.makeText(this, rawResult.getContents(), Toast.LENGTH_LONG).show();
             }
             else
                 Toast.makeText(this,"Product Not Found", Toast.LENGTH_LONG).show();
-        }
 
-      //  stopZBar();
+        }
     }
 }

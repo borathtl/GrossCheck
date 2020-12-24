@@ -61,13 +61,6 @@ public class MainActivity extends AppCompatActivity  {
                 ActivityCompat.requestPermissions(this, requests, 100);
             }
 
-       // cameraView = (CameraView)findViewById(R.id.cameraview) ;
-        btnDetect=(Button)findViewById(R.id.btn_detect);
-        waitingDialog= new SpotsDialog.Builder()
-                .setContext(this)
-                .setMessage("Please wait")
-                .setCancelable(false)
-                .build();
 
 
         loginButton = (Button) findViewById(R.id.login);
