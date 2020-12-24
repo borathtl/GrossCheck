@@ -1,5 +1,5 @@
 {
-    "/meyve sebze": {
+    "Meyve, sebze": {
         "Meyve": [
             {
                 "productName": "F\u0131nd\u0131k K\u0131r\u0131lm\u0131\u015f Fo\u015fa 500 G",
@@ -212,7 +212,7 @@
             }
         ]
     },
-    "/et-tavuk-balik-c-3": {
+    "Et, tavuk, balik": {
         "K\u0131rm\u0131z\u0131 Et": [
             {
                 "productName": "P\u0131nar Dana Kasap K\u00f6fte 180 G",
@@ -622,7 +622,7 @@
             }
         ]
     },
-    "/sut-kahvaltilik-c-4": {
+    "Sut, kahvaltilik": {
         "S\u00fct": [
             {
                 "productName": "Alpro Soya \u0130\u00e7ece\u011fi Kakaolu 250 Ml",
@@ -1644,7 +1644,7 @@
             }
         ]
     },
-    "/gida-sekerleme-c-5": {
+    "gida, sekerleme": {
         "Y\u0131lba\u015f\u0131 Sepeti": [
             {
                 "productName": "Y\u0131lba\u015f\u0131 Butik Sepet",
@@ -3086,7 +3086,7 @@
             }
         ]
     },
-    "/icecek-c-6": {
+    "icecek": {
         "Gazl\u0131 \u0130\u00e7ecek": [
             {
                 "productName": "Burn Gold Spark Enerji \u0130\u00e7ece\u011fi 500 Ml",
@@ -3700,7 +3700,7 @@
             }
         ]
     },
-    "/deterjan-temizlik-c-7": {
+    "Deterjan, temizlik": {
         "\u00c7ama\u015f\u0131r Y\u0131kama": [
             {
                 "productName": "Dylon Wash & Dye Giysi Boyas\u0131 Siyah 350 G",
@@ -4416,7 +4416,7 @@
             }
         ]
     },
-    "/kagit-kozmetik-c-8": {
+    "Kagit, kozmetik": {
         "Ka\u011f\u0131t \u00dcr\u00fcnleri": [
             {
                 "productName": "Sof\u0131a Tuvalet Ka\u011f\u0131d\u0131 Beyaz 16'L\u0131",
@@ -5654,7 +5654,7 @@
             }
         ]
     },
-    "/bebek-oyuncak-c-9": {
+    "Bebek, oyuncak": {
         "Bebek Bezi": [
             {
                 "productName": "Canbebe 4 Beden F\u0131rsat Paket Maxi 7-14 Kg 60'L\u0131",
@@ -6285,7 +6285,7 @@
             }
         ]
     },
-    "/ev-pet-c-a": {
+    "Ev, pet": {
         "Mutfak E\u015fyalar\u0131": [
             {
                 "productName": "Metaltex Victoria S\u00fczge\u00e7 Inox 16Cm",
@@ -7742,7 +7742,7 @@
             }
         ]
     },
-    "/elektronik-c-a6": {
+    "Elektronik": {
         "Telefon Ve Aksesuarlar\u0131": [
             {
                 "productName": "Ttec Compact Ara\u00e7 \u015earj Cihaz\u0131 Micro Usb 1.000Ma - Beyaz",
